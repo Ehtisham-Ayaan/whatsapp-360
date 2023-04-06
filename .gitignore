@@ -4,3 +4,6 @@
 .env.*
 
 yarn.lock
+whatsapp-360.pem
+
+web/config/secrets.yml

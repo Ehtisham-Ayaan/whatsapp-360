@@ -1,5 +1,5 @@
 type="backend"
 
 [commands]
-dev = "bin/rails server"
+dev = "bin/rails server -e production"
 build = "rake build:all"
