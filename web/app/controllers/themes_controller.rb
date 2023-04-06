@@ -69,7 +69,7 @@ class ThemesController < AuthenticatedController
         
         .icon-wrap:hover {
           cursor: pointer;
-          bottom: #{@padding_bottom / 2}px;
+          bottom: #{@padding_bottom / 1.5}px;
         }
         
         .box {
