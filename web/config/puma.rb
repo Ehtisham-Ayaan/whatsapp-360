@@ -13,7 +13,7 @@ threads min_threads_count, max_threads_count
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
 #
-worker_timeout 3600 if ENV.fetch("RAILS_ENV", "production") == "production"
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
@@ -32,6 +32,7 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
 #
+# Uncomment the following line if you want to use workers
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
@@ -39,6 +40,7 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
 #
+# Uncomment the following line if you want to use workers with preload_app!
 # preload_app!
 
 # Allow puma to be restarted by `bin/rails restart` command.

@@ -7,4 +7,3 @@ web/config/master.key
 
 web/public/api/assets
 web/public/assets
-web/public/index.html

@@ -43,7 +43,7 @@ class ThemesController < AuthenticatedController
     asset.attachment = asset.value = <<~LIQUID
       <style>
         #whatsapp-icon {
-          position: fixed;
+          position: relative;
           z-index: 9999;
         }
         #whatsapp-icon:hover {
@@ -69,13 +69,14 @@ class ThemesController < AuthenticatedController
         
         .icon-wrap:hover {
           cursor: pointer;
-          bottom: #{@padding_bottom / 1.5}px;
+          bottom: #{@padding_bottom / 1.2}px;
         }
         
         .box {
           display: none;
           position: relative;
           left: 0.5em;
+          bottom: #{@icon_size}px;
           background-color: white;
           border: 3px solid #00E676;
           height: #{@icon_size}px;

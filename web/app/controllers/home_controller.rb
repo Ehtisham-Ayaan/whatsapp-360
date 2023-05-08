@@ -9,6 +9,13 @@ class HomeController < ApplicationController
   PROD_INDEX_PATH = Rails.public_path.join("dist")
 
   def index
+    puts PROD_INDEX_PATH
+
+    Dir.foreach(PROD_INDEX_PATH) do |filename|
+      next if filename == '.' or filename == '..'
+      puts filename
+    end
+
     if ShopifyAPI::Context.embedded? && (!params[:embedded].present? || params[:embedded] != "1")
       redirect_to(ShopifyAPI::Auth.embedded_app_url(params[:host]), allow_other_host: true)
     else
